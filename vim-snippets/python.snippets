@@ -1,0 +1,33 @@
+#! header python头文件模板
+snippet #! "Shebang header for python scripts" b
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Author: taoyanqi
+# @Date: `date +%F`
+
+from __future__ import print_function
+from datetime import datetime
+import argparse
+
+def add_arguments(parse):
+	parse.add_argument("--data_path",type=str,default="../data/road_name.beijing.buffer_1km.convex_hull.txt")
+
+def main():
+	starttime = datetime.now()
+	$0
+	spend_time = (datetime.now() - starttime).seconds
+	print("run minutes:",spend_time/60.0)
+
+if __name__ == '__main__':
+	parse  = argparse.ArgumentParser()
+	add_arguments(parse)
+	flags,unparsed = parse.parse_known_args()
+	main()
+endsnippet
+
+# 多行注释
+snippet """ "commont for more lines" b
+"""
+$0
+"""
+endsnippet
