@@ -1,0 +1,54 @@
+snippet header "header of cpp " b
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+int main() {
+	$0
+	return 0;
+}
+endsnippet
+
+snippet structT "bDefinition for a binary tree node" biA
+struct TreeNode {
+	int val;
+	TreeNode *left;
+	TreeNode *right;
+	TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+endsnippet
+
+snippet if "if condition" b
+if ($1) {
+	$0
+}
+endsnippet
+
+snippet while "while" bA
+while ($1) {
+	$0
+}
+endsnippet
+
+snippet null "null pointer" bA
+nullptr
+endsnippet
+
+
+snippet constructT "construct tree" bA
+	/*
+	*               1
+	*              / \
+	*             2   3
+	*                /
+	*               4
+	*/
+	TreeNode* p1 = new TreeNode(${1:1});
+	TreeNode* p2 = new TreeNode(${2:2});
+	TreeNode* p3 = new TreeNode(${3:3});
+	TreeNode* p4 = new TreeNode(${4:4});
+	p1->left = p2;p1->right=p3;p3->left=p4;
+	$0
+endsnippet
